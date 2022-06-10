@@ -1,15 +1,18 @@
-Welcome to your new dbt project!
+# How to use this project
 
-### Using the starter project
+```bash
+pipenv install
+pipenv shell
+dbt deps
+dbt build
+```
 
-Try running the following commands:
-- dbt run
-- dbt test
+# DBT artifacts
 
+[dbt artifacts](https://github.com/brooklyn-data/dbt_artifacts) will keep a record of all your artifacts in your snowflake warehouse.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+This will upload your local metadata files and then build out the models
+```bash
+dbt --no-write-json run-operation upload_dbt_artifacts_v2
+dbt build -s dbt_artifacts 
+```

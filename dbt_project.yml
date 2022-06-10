@@ -36,3 +36,16 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+  dbt_artifacts:
+    +schema: dbt_artifacts
+    staging:
+      +schema: stg_dbt_artifacts
+
+vars:
+  # dbt_artifacts:
+  #   dbt_artifacts_database: your_db # optional, default is your target database
+  #   dbt_artifacts_schema: your_schema # optional, default is 'dbt_artifacts'
+  #   dbt_artifacts_table: your_table # optional, default is 'artifacts'
+  #   dbt_artifacts_results_table: your_table # optional, default is 'dbt_run_results'
+  #   dbt_artifacts_result_nodes_table: your_table # optional, default is 'dbt_run_result_nodes'
+  #   dbt_artifacts_manifest_nodes_table: your_table # optional, default is 'dbt_manifest_nodes'
