@@ -20,3 +20,17 @@ dbt build -s dbt_artifacts
 # dbt pre commit
 
 [link](https://github.com/offbi/pre-commit-dbt)
+
+Optionally run on every commit locally
+
+```bash
+pre-commit install
+```
+
+this will install the hooks to be run before each commit at:
+
+.git/hooks/pre-commit
+
+But definitely run on every pull request e.g. with github actions.
+
+Unfortunately, you **cannot natively use pre-commit-dbt** if you are using **dbt Cloud**. But you can run checks after you push changes into Github.
