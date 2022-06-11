@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 dbt-snowflake = "*"
+pre-commit = "*"
 
 [dev-packages]
 
