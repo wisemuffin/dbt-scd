@@ -34,8 +34,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_scd:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+      materialized: table
+      staging:
+        materialized: view
   dbt_artifacts:
     +schema: dbt_artifacts
     staging:

@@ -3,7 +3,6 @@ repos:
   rev: v1.0.0
   hooks:
   - id: check-script-semicolon
-  - id: check-script-has-no-table-name
   - id: dbt-test
   - id: dbt-docs-generate
   - id: check-model-has-all-columns

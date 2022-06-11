@@ -3,9 +3,18 @@
 ```bash
 pipenv install
 pipenv shell
+dbt seed
 dbt deps
 dbt build
 ```
+
+# data
+
+I am using the data from [customer-360-view-identity-resolution dbt blog](https://docs.getdbt.com/blog/customer-360-view-identity-resolution) the data consists of:
+
+- 823 gaggles
+- 5,781 users (unique by email, can only be associated with one gaggle)
+- 120,307 events (‘recipe_viewed’, ‘recipe_favorited’, or ‘order_placed’)
 
 # dbt artifacts
 
@@ -21,7 +30,7 @@ dbt build -s dbt_artifacts
 
 [link](https://github.com/offbi/pre-commit-dbt)
 
-Optionally run on every commit locally
+Optionally run on every commit locally. As it takes a bit of time to run might be better to just run this when pull request created.
 
 ```bash
 pre-commit install
