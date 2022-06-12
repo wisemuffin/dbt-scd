@@ -1,6 +1,6 @@
 with corporate_gaggles as (
 
-    select * from {{ ref('jafflegaggle_facts') }}
+    select * from {{ ref('fct_jafflegaggle') }}
     where corporate_email is not null
 
 ),
@@ -11,7 +11,7 @@ corporate_power_users as (
         get(array_agg(user_id) within group (order by created_at asc), 0)::int as first_user_id,
         get(array_agg(user_id) within group (order by number_of_events desc), 0)::int as most_active_user_id,
         get(array_agg(user_id) within group (order by number_of_orders desc), 0)::int as most_orders_user_id
-    from {{ ref('jafflegaggle_contacts') }}
+    from {{ ref('dim_contacts') }}
     where corporate_email is not null
     group by 1
 ),

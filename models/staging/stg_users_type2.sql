@@ -4,9 +4,7 @@ with source as (
     Normally we would select from the table here, but we are using seeds to load
     our data in this project
     #}
-    select * 
-    from {{ ref('raw_user') }}
-    where effective_to_ts = '{{ var('high_timestamp') }}'
+    select * from {{ ref('raw_user') }}
 
 ),
 
@@ -20,7 +18,9 @@ renamed as (
         {{ extract_email_domain('email') }} AS email_domain,
         
         gaggle_id, 
-        created_at
+        created_at,
+        effective_from_ts,
+        effective_to_ts
 
     from source
 

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: jafflegaggle_contacts
+  - name: dim_contacts
     description: >
       This table has basic information about a contact, as well as some derived facts of a contact's 
       activity with the JaffleGaggle platform
@@ -20,7 +20,7 @@ models:
       - name: gaggle_id
         description: Foreign key to gaggles
 
-  - name: jafflegaggle_corporate_accounts
+  - name: rpt_corporate_accounts
     description: > 
       This table has basic information about an account, including certain metrics about their users.
       
@@ -43,7 +43,7 @@ models:
       - name: most_orders_user_id
         description: Foreign key to the corporate user associated with this account with the most orders
 
-  - name: jafflegaggle_facts
+  - name: fct_jafflegaggle
     description: > 
       This table has basic information about a gaggle, including certain metrics about their users.
 

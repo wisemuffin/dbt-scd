@@ -1,6 +1,6 @@
 with users as (
 
-    select * from {{ ref('jafflegaggle_contacts') }}
+    select * from {{ ref('dim_contacts') }}
 
 ),
 
